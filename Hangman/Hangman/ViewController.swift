@@ -8,13 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var userInput: UITextField!
+    
+    @IBOutlet weak var mainImage: UIImageView!
+    
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    userInput.delegate = self
   }
 
-
+    @IBAction func inputBegin(_ sender: UITextField) {
+        hangmanBrain()
+    }
+    
+    
 }
 
