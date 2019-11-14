@@ -28,7 +28,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
 // MARK: Actions
     
     @IBAction func beginGameButtonPressed(_ sender: UIButton) {
-        beginGameButton.isEnabled = false
+        beginGameButton.isHidden = true
+       // beginGameButton.isEnabled = false
         resetGame()
         mainGameLabel.text = String(underscoresFromRandomWord)
         incorrectLettersLabel.text = ("Tap \"Begin Game\" to start")
@@ -43,11 +44,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
          
             if randomWord == (String(underscoresFromRandomWord)) {
                 winOrLoseLabel.text = "WINNER!!!"
-                beginGameButton.isEnabled = true
+                beginGameButton.isHidden = false
+              //  beginGameButton.isEnabled = true
                 beginGameButton.setTitle("Tap here to play again", for: .normal)
+                view.backgroundColor = .green
             } else if guessCounter > 5 {
                 winOrLoseLabel.text = "You lost..."
+                beginGameButton.isHidden = false
+             //   beginGameButton.isEnabled = true
                 beginGameButton.setTitle("Tap here to play again", for: .normal)
+                view.backgroundColor = .red
                 mainGameLabel.text = randomWord
             }
         

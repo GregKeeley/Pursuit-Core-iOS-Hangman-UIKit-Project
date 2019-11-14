@@ -11,7 +11,7 @@ import Foundation
 var randomWord = words.randomElement()?.lowercased() ?? "Error"
 
 var underscoresFromRandomWord:[Character] = Array(String(repeating: "_", count: randomWord.count))
-    var hiddenWord = String(underscoresFromRandomWord)
+var hiddenWord = String(underscoresFromRandomWord)
 var maxGuesses = 5
 var guessCounter = 0
 var lettersGuessed = ""
@@ -59,9 +59,7 @@ func hangmanBrain(_ userInput: String) {
         totalGuesses += 1
         print(guessCounter)
         print(randomWord)
-        
     }
-
 }
 //func changeImage() {
 //    switch guessCounter {
